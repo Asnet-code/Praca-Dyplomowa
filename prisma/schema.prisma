@@ -95,7 +95,7 @@ model Order{
   products CartProductType[]
   address Address?
 
-  user   User?   @relation(fields: [userId], references: [id]) // ✅ Opcjonalny user
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 type CartProductType{
