@@ -1,22 +1,22 @@
-import prisma from "@/libs/prismadb"
+import prisma from "@/libs/prismadb";
 
+export default async function getOrdersByUserId(userId: string) {
+  try {
+    const orders = await prisma.order.findMany({
+      where: {
+        userId: userId,
+        user: { isNot: null }, // Zapewnia, że user istnieje
+      },
+      include: {
+        user: true,
+      },
+      orderBy: {
+        createDate: "desc",
+      },
+    });
 
-export default async function getOrdersByUserId(userId: string){
-    try{
-        const orders = await prisma.order.findMany({
-            include:{
-                user: true
-            },
-            orderBy: {
-                createDate: "desc"
-            },
-            where:{
-                userId: userId,
-            }
-        })
-
-        return orders;
-    } catch (error: any){
-        throw new Error(error)
-    }
+    return orders;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 }
