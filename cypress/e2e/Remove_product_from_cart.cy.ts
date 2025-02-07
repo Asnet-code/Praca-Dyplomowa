@@ -1,6 +1,6 @@
 describe("Remove product from cart", () => {
   it("should remove product from cart succesfully", () => {
-    cy.visit("http://localhost:3000/product/66e98e9497e03192b3133e39");
+    cy.visit("http://localhost:3000/product/660d522d74556156e974629a");
     cy.contains("button", "Dodaj Do Koszyka").click();
     cy.visit("http://localhost:3000/cart");
 

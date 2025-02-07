@@ -2,7 +2,7 @@ describe("Login Form", () => {
   it("should log in successfully with valid credentials", () => {
     cy.visit("http://localhost:3000/login");
 
-    cy.get("input#email").type("a@a");
+    cy.get("input#email").type("a@ta");
 
     cy.get("input#password").type("a");
 

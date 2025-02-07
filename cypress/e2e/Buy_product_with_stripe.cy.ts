@@ -1,7 +1,7 @@
 describe("Buy product with stripe", () => {
   it("Logged usser should have access to buy item", () => {
     cy.visit(
-      "https://asnet-komputery.vercel.app/product/66e98e9497e03192b3133e39"
+      "https://asnet-komputery.vercel.app/product/660d522d74556156e974629a"
     );
 
     cy.contains("button", "Dodaj Do Koszyka").click();
@@ -16,9 +16,9 @@ describe("Buy product with stripe", () => {
 
     cy.visit("https://asnet-komputery.vercel.app/login");
 
-    cy.get("input#email").type("test12@gmail.com");
+    cy.get("input#email").type("a@a");
 
-    cy.get("input#password").type("passwords1234");
+    cy.get("input#password").type("a");
 
     cy.contains("button", "Zaloguj się").click();
 

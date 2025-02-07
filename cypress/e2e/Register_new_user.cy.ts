@@ -14,9 +14,9 @@ describe("Registration Form", () => {
   it("successfully registers a new user", () => {
     cy.visit("http://localhost:3000/register");
 
-    cy.get("#name").type("John Doeses");
-    cy.get("#email").type("tesst12@gmail.com");
-    cy.get("#password").type("password1234");
+    cy.get("#name").type("Josdhn Doeses");
+    cy.get("#email").type("tessdsats12@gmail.com");
+    cy.get("#password").type("passsword1234");
 
     cy.get("button").contains("Zarejestruj się").click();
     cy.contains("Zalogowano").should("exist");
